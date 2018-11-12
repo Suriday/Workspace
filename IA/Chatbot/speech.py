@@ -9,5 +9,7 @@ with sr.Microphone() as source:
     print('Habla')
     audio = recognizer.listen(source)
 
-
-print(recognizer.recognize_google(audio, language="es"))
+try:
+    print(recognizer.recognize_google(audio, language="es"))
+except:
+    print("No hay parametros suficientes de voz")
